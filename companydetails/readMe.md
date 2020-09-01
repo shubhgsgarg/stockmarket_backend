@@ -19,6 +19,8 @@ Steps to run the microservice.
 - Select the database.
     Use DatabaseName;
     
+-create schmea stockexchange and use it.
+    
 - Then run the queries provided in SQL- Table creation folder one by one.
   
 2. Edit application.properties file with your database details and credentials.
