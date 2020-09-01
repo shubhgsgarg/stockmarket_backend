@@ -1,0 +1,16 @@
+com\wellsfargo\stockmarket\companydetails\repository\CompanyStockPriceRepository.class
+com\wellsfargo\stockmarket\companydetails\service\IpoService.class
+com\wellsfargo\stockmarket\companydetails\service\CompanyService.class
+com\wellsfargo\stockmarket\companydetails\entity\AssocStockExchange.class
+com\wellsfargo\stockmarket\companydetails\CompanyDetailsApplication.class
+com\wellsfargo\stockmarket\companydetails\controller\CompanyController.class
+com\wellsfargo\stockmarket\companydetails\controller\IpoController.class
+com\wellsfargo\stockmarket\companydetails\entity\CompanyPeriodModel.class
+com\wellsfargo\stockmarket\companydetails\controller\CompanyStockPriceController.class
+com\wellsfargo\stockmarket\companydetails\entity\BoardOfDir.class
+com\wellsfargo\stockmarket\companydetails\entity\CompanyStockPrice.class
+com\wellsfargo\stockmarket\companydetails\service\CompanyStockPriceService.class
+com\wellsfargo\stockmarket\companydetails\entity\Ipo.class
+com\wellsfargo\stockmarket\companydetails\repository\IpoRepository.class
+com\wellsfargo\stockmarket\companydetails\entity\Company.class
+com\wellsfargo\stockmarket\companydetails\repository\CompanyRepository.class
