@@ -10,4 +10,4 @@ CREATE TABLE `user` (
   `email` varchar(50) DEFAULT NULL,
   `confirmed` varchar(1) DEFAULT NULL,
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB AUTO_INCREMENT=1235 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ;
