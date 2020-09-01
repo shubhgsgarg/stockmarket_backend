@@ -18,7 +18,7 @@ import static org.mockito.Mockito.*;
 public class IpoTest {
 	
 	@Test
-	void getAllIposTest() 
+	void getAllIposTest()
 	{
 		
 		IpoService serv = mock(IpoService.class);

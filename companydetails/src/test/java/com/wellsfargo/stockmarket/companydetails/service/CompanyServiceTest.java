@@ -150,13 +150,10 @@ public class CompanyServiceTest {
 	
 	@Test
 	public void testdeleteCompany_S() throws Exception {
+			
+		companyService.deleteCompany(1008);
 		
-		
-		Optional<Company> comp= companyRepository.findByCompanyCode(1022);
-		
-		companyService.deleteCompany(comp.get().getCompanyId());
-		
-		verify(companyRepository).deleteById(comp.get().getCompanyId());
+		verify(companyRepository).deleteById(1008l);
    
 		 	
 	}

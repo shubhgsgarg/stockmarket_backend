@@ -20,12 +20,16 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.support.AnnotationConfigContextLoader;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.RequestBuilder;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 import com.wellsfargo.stockmarket.companydetails.CompanyDetailsApplication;
 import com.wellsfargo.stockmarket.companydetails.controller.CompanyController;
 import com.wellsfargo.stockmarket.companydetails.controller.CompanyStockPriceController;
+import com.wellsfargo.stockmarket.companydetails.entity.Company;
 import com.wellsfargo.stockmarket.companydetails.entity.CompanyPeriodModel;
 import com.wellsfargo.stockmarket.companydetails.entity.CompanyStockPrice;
 import com.wellsfargo.stockmarket.companydetails.service.CompanyService;
@@ -60,11 +64,22 @@ public class CompanyStockPriceControllerTest {
 		companyStockPrice.setCurrentPrice(10.2);
 		companyStockPriceList.add(companyStockPrice);
 		
+		RequestBuilder reqBuilder = MockMvcRequestBuilders.get("/company/companyStockPrice")
+				.accept(MediaType.APPLICATION_JSON).content("{\r\n" + 
+						"    \"companyList\":[1002],\r\n" + 
+						"    \"periodFromDate\": \"2020-02-02\",\r\n" + 
+						"    \"periodToDate\" : \"2020-11-28\"\r\n" + 
+						"\r\n" + 
+						"}").contentType(MediaType.APPLICATION_JSON);
+	
+		
+		
 		when(companyStockPriceService.getCompanyDetails(any(CompanyPeriodModel.class))).thenReturn(companyStockPriceList);
-		mockMvc.perform(get("/company/companyStockPrice"))
+		
+			mockMvc.perform(reqBuilder)
 		 .andExpect(status().isOk())
-		 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
 		 .andReturn();
+		
 		   
 	}
 	
