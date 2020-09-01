@@ -18,5 +18,8 @@ Steps to run the microservice.
     
 - Then run the queries provided in SQL- Table creation folder one by one.
   
-2. Running Springboot application.
-    .jar file is available here.
+2. Edit application.properties file with your database details and credentials.
+
+3. Import the project as existing maven project.
+
+4. Run as springboot application.
