@@ -1,8 +1,11 @@
 Content of Repository
-1. UML -                            Folder contains all the UML diagrams.
-2. Postman SS -                     Folder contains screenshots of testing done on Postman application.
-3. SQL- Table creation -            Folder contains all sql queries to create the tables required
-4. Microservice - companydetails -  Folder contains springboot application 
+1. src -                            Folder contains all the code
+2. pom -                            All the dependencies and plugins 
+3. Application.properties -         Contains parameter required to run application.
+4. UML -                            Folder contains all the UML diagrams.
+5. Postman SS -                     Folder contains screenshots of testing done on Postman application.
+6. SQL- Table creation -            Folder contains all sql queries to create the tables required
+7. Microservice - companydetails -  Folder contains springboot application 
 
 
 
