@@ -131,7 +131,8 @@ public class CompanyIntegrationTest {
 	@Test
 	public void testupdateCompany() throws Exception {
 		Company company1 = new Company();
-		company1.setCompanyCode(2004);
+		company1.setCompanyId(3);
+		company1.setCompanyCode(1008);
 		company1.setCompanyName("ponyta");
 		
 		HttpEntity<Company> entity = new HttpEntity<Company>(company1, headers);
