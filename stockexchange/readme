@@ -1,0 +1,18 @@
+Content of Repository
+
+stock-exchange : Contains Springboot application code for Microservice 5 (Stock Exchange)
+pom.xml : All the dependencies and plugins
+application.properties : Contains parameter required to run application.
+Diagrams : Folder contains class,ER,architecture and sequence diagrams
+Postman Screenshots : Folder contains screenshots of testing done on Postman application.
+SQL Files - Folder contains all sql queries to create the tables required and screenshots of relevant tables captured in SQL Workbench
+*Application is currently running at localhost:8082
+
+Steps to run the microservice.
+
+- Setting Up MySQL Database.
+- Open Mysql workbench and create a connection (Remember to update username and password in application.properties)
+- Create a database (schema) named "stockexchange"
+- Run SQL file to create tables and populate them with data
+- Import the project as existing Maven project.
+- Run as springboot application.
