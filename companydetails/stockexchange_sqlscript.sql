@@ -35,7 +35,7 @@ FOREIGN KEY (AssocCompanyId) REFERENCES company(companyid)  ON DELETE CASCADE
 insert into company_X_BoardOfDir values(1, 'poi');
 insert into company_X_BoardOfDir values(1, 'qwerty');
 
-create table company_x_stockexchange(assocCompanyCode numeric, stockExchange varchar(20), stockcode varchar(20),
+create table company_x_stockexchange(assocCompanyCode numeric, stockExchange varchar(20), stockcode varchar(20) primary key,
  CONSTRAINT FK_companycode
 FOREIGN KEY (assocCompanyCode) REFERENCES company(companycode)  ON DELETE CASCADE,
 CONSTRAINT FK_stockexchange
