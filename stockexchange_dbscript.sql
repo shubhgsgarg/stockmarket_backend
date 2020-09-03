@@ -4,9 +4,10 @@ create schema stockexchange and use that to create the below tables
 create table sector(sectorId int AUTO_INCREMENT primary key, sectorName varchar(20) unique not null, brief varchar(50));
 insert into sector values(1,'agr','asdfg');
 
-create table user(userId int AUTO_INCREMENT primary key, userName varchar(20) unique not null, UserPassword varchar(20), 
-userType varchar(20), email varchar(50), confirmed varchar(1));
-insert into user values(1234,'admin','admin','admin','jogn@gmail.com','y');
+create table user(userId int AUTO_INCREMENT primary key, userName varchar(20) unique not null, password varchar(20), 
+isadmin varchar(20), email varchar(50), verified varchar(1));
+drop table user;
+insert into user values(1234,'admin','admin','admin','admin@gmail.com','y');
 
 create table T_StockExchange(stockExchangeId int AUTO_INCREMENT primary key, stockExchange varchar(20) unique not null,
  brief varchar(20), contactAddress varchar(100), remarks varchar(50));
@@ -42,7 +43,6 @@ CONSTRAINT FK_stockexchange
 FOREIGN KEY (stockExchange) REFERENCES t_stockExchange(stockExchange)  ON DELETE CASCADE
 );
 
-
 insert into company_x_stockexchange values(1002,'nsc','123');
 
 create table CompanyStockPrice(companyStockPriceId int AUTO_INCREMENT primary key, companyCode numeric, stockExchange varchar(20),
@@ -66,3 +66,4 @@ FOREIGN KEY (stockExchange) REFERENCES t_stockExchange(stockExchange)  ON DELETE
 
 insert into IPO(companyname,stockexchange,pricepershare,totalshare,opendatetime,remarks) 
 values('abc','nsc',8987,981133,date("1992-08-20"),'this is ipo1 for abc');
+
