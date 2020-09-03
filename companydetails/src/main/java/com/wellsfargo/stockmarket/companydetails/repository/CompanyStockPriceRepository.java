@@ -15,7 +15,7 @@ public interface CompanyStockPriceRepository extends CrudRepository<CompanyStock
 
 
 @Query("from CompanyStockPrice s where "
-		+ "s.companyCode in :companyList and s.stockPriceDate BETWEEN :inputFromDate AND :inputToDate")
+		+ "s.companyCode in :companyList and s.stockPriceDate BETWEEN :inputFromDate AND :inputToDate order by s.stockPriceDate")
 public List<CompanyStockPrice> findByCompanyListBetweenPeriod(List<Integer> companyList, Date inputFromDate, Date inputToDate);
 
 }
