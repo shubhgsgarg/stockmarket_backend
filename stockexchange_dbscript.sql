@@ -6,7 +6,7 @@ insert into sector values(1,'agr','asdfg');
 
 create table user(userId int AUTO_INCREMENT primary key, userName varchar(20) unique not null, password varchar(20), 
 isadmin varchar(20), email varchar(50), verified varchar(1));
-drop table user;
+
 insert into user values(1234,'admin','admin','admin','admin@gmail.com','y');
 
 create table T_StockExchange(stockExchangeId int AUTO_INCREMENT primary key, stockExchange varchar(20) unique not null,
