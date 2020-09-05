@@ -2,6 +2,7 @@ package com.wellsfargo.stockmarket.stockdataretrieval.controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +23,8 @@ public class SectorController {
 	private SectorService sectorService;
 	
 	
-	// This get request is to return the list of all the sectors 
+	// This get request is to return the list of all the sectors
+	@CrossOrigin(origins = "http://localhost:4200")
 	@RequestMapping("/sectors")
 	public List<Sector> getAllSectors(){
 		return sectorService.getAllSectors();
@@ -43,7 +45,7 @@ public class SectorController {
 	//This get request returns the average price of all the stocks in a list of sectors
 	@GetMapping("/sectors/price")
 	public List<String> getPrice(@RequestBody SectorPriceModel sectorPriceModel){
-		return sectorService.getPrice(sectorPriceModel);
+		return sectorService.getCurrentPrice(sectorPriceModel);
 	}
 	
 	// This get request returns the average price of all the stocks in a list of sectors within range of two dates 

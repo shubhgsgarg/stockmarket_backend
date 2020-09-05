@@ -47,8 +47,8 @@ public class SectorService {
 		return "Sector doesn't exist";		
 	}	
 	
-	public List<Stock> getStocks(String companyName) {
-		return stockRepo.findByCompanyName(companyName);
+	public List<Stock> getStocks(int companyCode) {
+		return stockRepo.findByCompanyCode(companyCode);
 	}
 
 	public List<Company> getCompany(Long sectorid) {
@@ -56,7 +56,7 @@ public class SectorService {
 		return companyRepo.findBySectorName(sector.getSectorName());
 	}
 	
-	public List<String> getPrice(SectorPriceModel sectorPriceModel) {
+	public List<String> getCurrentPrice(SectorPriceModel sectorPriceModel) {
 		double price = 0.0;
 		double averageSectorPrice = 0.0;
 		List<String> res  = new ArrayList<>();
@@ -66,10 +66,10 @@ public class SectorService {
 			String sectorName = sector.getSectorName();
 			List<Company> companies = getCompany(sectorid);
 			for(Company c: companies) {
-				String companyName = c.getCompanyName();
-				List<Stock> stocks = getStocks(companyName);
+				int companyCode = c.getCompanyCode();
+				List<Stock> stocks = getStocks(companyCode);
 				for(Stock s: stocks) {
-					price = price + s.getPrice();
+					price = price + s.getCurrentPrice();
 				}
 			}
 		
@@ -102,12 +102,12 @@ public class SectorService {
 			String sectorName = sector.getSectorName();
 			List<Company> companies = getCompany(sectorid);
 			for(Company c: companies) {
-				String companyName = c.getCompanyName();
-				List<Stock> stocks = getStocks(companyName);
+				int companyCode = c.getCompanyCode();
+				List<Stock> stocks = getStocks(companyCode);
 				for(Stock s: stocks) {
 					LocalDate stockDate = LocalDate.parse(s.getDate(),dtf);
 					if(stockDate.isAfter(fromDate) && stockDate.isBefore(toDate)) {
-						price = price + s.getPrice();
+						price = price + s.getCurrentPrice();
 					}
 				}
 			}
@@ -141,12 +141,12 @@ public class SectorService {
 			String sectorName = sector.getSectorName();
 			List<Company> companies = getCompany(sectorid);
 			for(Company c: companies) {
-				String companyName = c.getCompanyName();
-				List<Stock> stocks = getStocks(companyName);
+				int companyCode = c.getCompanyCode();
+				List<Stock> stocks = getStocks(companyCode);
 				for(Stock s: stocks) {
 					LocalDate stockDate = LocalDate.parse(s.getDate(),dtf);
 					if(stockDate.isAfter(fromDate) && stockDate.isBefore(currentLocalDate)) {
-						price = price + s.getPrice();
+						price = price + s.getCurrentPrice();
 					}
 				}
 			}

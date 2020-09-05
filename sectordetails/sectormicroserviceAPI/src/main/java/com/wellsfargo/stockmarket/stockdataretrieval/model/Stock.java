@@ -5,16 +5,18 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+
 @Entity
-@Table(name="stock")
+@Table(name="companystockprice")
 public class Stock {
 	@Id
+	@Column(name="companystockpriceid")
 	private int stockId;
-	@Column
-	private String companyName;
-	@Column
-	private double price;
-	@Column 
+	@Column(name="companycode")
+	private int companyCode;
+	@Column(name="currentprice")
+	private double currentPrice;
+	@Column(name="stockpricedate")
 	private String date;
 	
 	public Stock() {
@@ -26,17 +28,17 @@ public class Stock {
 	public void setStockId(int stockId) {
 		this.stockId = stockId;
 	}
-	public String getCompanyName() {
-		return companyName;
+	public int getCompanyCode() {
+		return companyCode;
 	}
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
+	public void setCompanyCode(int companyCode) {
+		this.companyCode = companyCode;
 	}
-	public double getPrice() {
-		return price;
+	public double getCurrentPrice() {
+		return currentPrice;
 	}
-	public void setPrice(double price) {
-		this.price = price;
+	public void setPrice(double currentPrice) {
+		this.currentPrice = currentPrice;
 	}
 	public String getDate() {
 		return date;
