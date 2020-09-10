@@ -1,4 +1,5 @@
-FROM scratch
+FROM java:8
+VOLUME /tmp
+VOLUME /app
 EXPOSE 80
-COPY http-server /
-CMD ["/http-server"]
+ENTRYPOINT ["sh","/app/app.sh"]
